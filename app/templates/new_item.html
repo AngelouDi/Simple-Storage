@@ -1,0 +1,13 @@
+<div class="input_panel modal" id="new_item_modal">
+    <span id="input_panel_title">New Item</span>
+    <form action="/api/add"method="POST">
+        <input name="name" placeholder="Item Name" required>
+        <input type="number" name="quantity" placeholder="Quantity" required>
+        <select id="owner" name="owner" >
+            {% for unit in units %}
+            <option value="{{unit[0]}}">{{unit[0]}}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" value="Submit">Login</button>
+    </form>
+</div>

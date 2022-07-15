@@ -1,0 +1,8 @@
+<div class="input_panel modal" id="new-warehouse-modal">
+    <span id="input_panel_title">New Warehouse</span>
+    <form action="{{url_for('new_warehouse')}}" method="POST">
+        <input name="name" placeholder="Name" required>
+        <input name="location" placeholder="Location" required>
+        <button type="submit" value="Submit">Add Warehouse</button>
+    </form>
+</div>

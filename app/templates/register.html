@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="input_panel" id="register_panel">
+    <span id="input_panel_title">Register</span>
+    <form method="POST">
+        <input type="email" id="email" name="email" placeholder="Email">
+        <input id="username" name="username" placeholder="Username" required>
+        <input type="password" id="password" name="password" placeholder="Password">
+        <input id="name_field" name="name" placeholder="John" required>
+        <input id="surname_field" name="surname" placeholder="Doe" required>
+        <input type="tel" id="phone_field" name="phone" placeholder="1234567890" required>
+        <button type="submit" value="Submit">Login</button>
+    </form>
+</div>
+{% endblock %}
+
+

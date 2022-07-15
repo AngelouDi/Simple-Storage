@@ -1,0 +1,26 @@
+<div class="panel" id="item_container">
+    {% for item in items %}
+    <div class="panel item">
+        <div class="item_name"><a href="{{url_for('items', item=item['itemname'])}}">{{ item["itemname"] }}</a></div>
+        <hr>
+        <div><span class="thin">Quantity: </span>{{ item["quantity"] }}</div>
+        <div>
+            <span class="thin">Owner: </span><a class="item_owner_name" href="{% if item['type'] == 'person' %}{{url_for('users', user=item['storagename'])}}{%else%}{{url_for('storage_units', unit=item['storagename'])}}{% endif %}">{{
+                item["storagename"] }}</a>
+        </div>
+        <div class="thin">{{ item['ownership_date'] }}</div>
+        <hr>
+        {% if item['type'] == 'storage' %}
+        <button data-itemname="{{item['itemname']}}" data-id="{{item['id']}}" data-owner="{{item['storagename']}}"class="icon-container claim-btn">
+            <img src="{{ url_for('static', filename='images/folder-plus.svg') }}">
+            <span>Claim</span>
+        </button>
+        {% elif item['type'] == 'person' and item['storagename'] == session['username']%}
+        <button data-itemname="{{item['itemname']}}" data-id="{{item['id']}}" class="icon-container return-btn">
+            <img src="{{ url_for('static', filename='images/folder-minus.svg') }}">
+            <span>Return</span>
+        </button>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,7 @@
+<div class="panel" id="sidenav">
+    <a href="/">Everything</a>
+    {% for unit in units %}
+    <a class="{% if unit[1] == 'person' %}person{%else%}storage{% endif %}"
+       href="/{% if unit[1] == 'person' %}users{%else%}storage_units{% endif %}/{{unit[0]}}">{{unit[0]}}</a>
+    {% endfor %}
+</div>

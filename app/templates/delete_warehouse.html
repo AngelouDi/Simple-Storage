@@ -1,0 +1,13 @@
+<div class="input_panel modal" id="delete-warehouse-modal">
+    <span id="input_panel_title">Delete: <a id="delete-warehouse-name-text"></a></span>
+    <a>
+        This action will delete the warehouse and ALL THE ITEMS it holds!!!
+    </a>
+    <a>
+        ARE YOU SURE?
+    </a>
+    <form action="{{url_for('delete_warehouse')}}" method="POST">
+        <input name="name" type="hidden" id="delete-warehouse-name-form" value="">
+        <button type="submit" value="Submit">I'M SURE</button>
+    </form>
+</div>

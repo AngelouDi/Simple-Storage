@@ -1,0 +1,10 @@
+{% extends 'main_layout.html' %}
+
+{% block topnav %}
+<span>{{unit_info["storagename"]}}</span>
+<span>{{unit_info["location"]}}</span>
+{% endblock %}
+
+{% block extra_tools %}
+<button class="panel" id="delete-warehouse-btn" title="Delete Warehouse"><img src="{{ url_for('static', filename='images/trash.svg') }}"></button>
+{% endblock %}

@@ -1,0 +1,8 @@
+<div class="input_panel modal" id="rename-item-modal">
+    <span id="input_panel_title">Rename: <a id="rename-item-name"></a></span>
+    <form action="{{url_for('rename_item')}}" method="POST">
+        <input name="old_name" type="hidden" id="old-item-name" value="">
+        <input name="new_name" placeholder="New Name" required>
+        <button type="submit" value="Submit">Rename</button>
+    </form>
+</div>

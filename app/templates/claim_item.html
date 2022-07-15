@@ -1,0 +1,11 @@
+<div class="input_panel modal" id="claim_item_modal">
+    <span id="input_panel_title">Claim: <span id="claim-item-itemname">Placeholder NAME</span></span>
+    <form action="/api/claim"method="POST">
+
+        <span>From: </span><span id="claim-item-owner-title">placeholder owner</span>
+        <input type="hidden" name="owner" id="claim-item-owner" value="">
+        <input type="hidden" name="id" id="claim-item-id" value="">
+        <input type="number" name="quantity" placeholder="Quantity" required>
+        <button type="submit" value="Submit">Claim</button>
+    </form>
+</div>

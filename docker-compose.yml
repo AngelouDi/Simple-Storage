@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  postgres_db:
+    image: postgres
+    ports:
+      - "54320:5432"
+    env_file:
+      - .env
+    restart: always
+    volumes:
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+  app:
+    build: .
+    env_file:
+      - .env
+    links:
+      - postgres_db
+    ports:
+      - "80:5000"
+    restart: always
+    volumes:
+      - ./app:/app:ro

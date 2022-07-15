@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="panel sidebar" id="topnav">
+    <div id="topnav-left-side">
+        {% block topnav %}
+        {% endblock %}
+    </div>
+    <div>
+        <input id="searchbar" placeholder="Search Item">
+        <a class="secondary">{{session['username']}}</a>
+        <a href="/logout">
+            <button class="panel" action="/logout" title="Log Out"><img
+                    src="{{ url_for('static', filename='images/log-out.svg') }}">
+            </button>
+        </a>
+    </div>
+
+    </a>
+</div>
+
+<div id="main_container">
+    {% include 'sidenav.html' %}
+    {% include 'items.html' %}
+    <div class="panel sidebar" id="toolbar">
+        <button class="panel" id="add-btn" title="New Item"><img
+                src="{{ url_for('static', filename='images/plus.svg') }}"></button>
+        <button class="panel" id="new-warehouse-btn" title="New Warehouse"><img
+                src="{{ url_for('static', filename='images/home.svg') }}"></button>
+        {% block extra_tools %}
+        {% endblock %}
+    </div>
+</div>
+
+<div class="modal-bg modal" id="new-item-modal">
+    {% include 'new_item.html' %}
+</div>
+
+<div class="modal-bg modal" id="claim-item-modal">
+    {% include 'claim_item.html' %}
+</div>
+
+<div class="modal-bg modal" id="return-item-modal">
+    {% include 'return_item.html' %}
+</div>
+
+<div class="modal-bg modal" id="new-warehouse-modal">
+    {% include 'new_warehouse.html' %}
+</div>
+
+<div class="modal-bg modal" id="rename-item-modal">
+    {% include 'rename_item.html' %}
+</div>
+
+<div class="modal-bg modal" id="delete-item-modal">
+    {% include 'delete_item.html' %}
+</div>
+
+<div class="modal-bg modal" id="delete-warehouse-modal">
+    {% include 'delete_warehouse.html' %}
+</div>
+
+<script src="{{ url_for('static', filename='javascript/app.js') }}"></script>
+{% endblock %}
+

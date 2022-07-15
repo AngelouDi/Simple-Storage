@@ -1,0 +1,13 @@
+<div class="input_panel modal" id="return_item_modal">
+    <span id="input_panel_title">Return: <a id="return-item-itemname">Placeholder NAME</a></span>
+    <form action="{{url_for('return_api')}}" method="POST">
+        <input type="hidden" name="id" id="return-item-id" value="">
+        <input type="number" name="quantity" placeholder="Quantity" required>
+        <select id="new-owner" name="owner">
+            {% for warehouse in warehouses %}
+            <option value="{{warehouse['storagename']}}">{{warehouse['storagename']}}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" value="Submit">Return</button>
+    </form>
+</div>

@@ -1,0 +1,339 @@
+/* Body */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+
+body {
+    font-family: sans-serif;
+    background-color: #f4f5fa;
+    font-size: 20px;
+}
+
+#main_container {
+    /*height: 50%;*/
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+}
+
+.thin {
+    font-weight: lighter;
+}
+
+/* Sidenav */
+
+#sidenav {
+    text-align: left;
+    max-width: 150px;
+    /*height: 85%;*/
+    /*margin-right: 15px;*/
+}
+
+#sidenav a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+
+#sidenav .person:hover {
+    text-shadow: 0px 0px 5px #cb3d6e;
+    color: #cb3d6e;
+}
+
+#sidenav .storage:hover {
+    text-shadow: 0px 0px 5px #4849d2;
+    color: #4849d2;
+}
+
+/* Toolbar */
+#toolbar .panel {
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* Topnav */
+#topnav {
+    display: flex;
+    justify-content: space-between;
+}
+
+#topnav #topnav-left-side {
+    display: table;
+}
+
+#topnav #topnav-left-side span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#topnav .primary {
+    font-size: 18px;
+    color: gray;
+    font-weight: lighter;
+}
+
+#topnav .secondary {
+    font-size: 18px;
+    color: gray;
+    font-weight: lighter;
+}
+
+#topnav .element {
+    margin-right: 20px;
+}
+
+#searchbar {
+    font-size: 15px;
+    padding: 0px 10px 3px 15px;
+    border: none;
+    border-bottom: 1px solid #8e8e8e;
+    background: transparent;
+    font-weight: lighter;
+    margin-right: 25px;
+}
+
+#searchbar:focus {
+    outline: none;
+}
+
+/* Panels */
+
+.panel {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0px 0px 50px 1px #b5c3d5;
+    padding: 20px;
+    margin: 12px
+}
+
+/* Sidebars */
+.sidebar button img {
+    display: flex;
+}
+
+.sidebar button {
+    margin: 0px;
+    padding: 12px;
+    transition: 0.1s;
+    border: none;
+}
+
+.sidebar button:hover {
+    box-shadow: 0px 0px 20px 2px #cb3d6e;
+}
+
+/* Items */
+
+#item_container {
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-gap: 15px;
+}
+
+.item {
+    transition: 0.3s;
+    text-align: center;
+}
+
+.item:hover {
+    box-shadow: 0px 0px 40px 6px #cb3d6e;
+}
+
+.item .item_name {
+    font-size: 20px;
+}
+
+.item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.item hr {
+    border: none;
+    background-color: #8e8e8e;
+    height: 1px;
+}
+
+/* Icons */
+
+.icon-container {
+    background-color: white;
+    border: none;
+    text-align: center;
+}
+
+.icon-container img, .icon-container span {
+    display: inline;
+    vertical-align: middle;
+}
+
+.return-btn:hover span {
+    color: #cb3d6e;
+}
+
+.return-btn:hover img {
+    filter: invert(29%) sepia(81%) saturate(1495%) hue-rotate(310deg) brightness(88%) contrast(84%);
+}
+
+.claim-btn:hover span {
+    color: #3DC6CB;
+}
+
+.claim-btn:hover img {
+    filter: invert(61%) sepia(100%) saturate(296%) hue-rotate(133deg) brightness(93%) contrast(85%);
+}
+
+.claim-btn {
+    /*background-color: #7fdebb;*/
+}
+
+.claim-btn:hover {
+    /*background-color: #0e3a2a;*/
+}
+
+.return-btn {
+    /*background-color: #d5373c;*/
+}
+
+.return-btn:hover {
+
+    /*background-color: #410b0b;*/
+}
+
+
+/* Portals */
+.input_panel {
+    display: grid;
+    grid-row-gap: 20px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 12px;
+    box-shadow: 0px 0px 40px 6px #b5c3d5;
+    padding: 47px;
+    padding-top: 25px;
+}
+
+.input_panel #input_panel_title {
+    font-size: 34px;
+}
+
+.input_panel form input {
+    box-sizing: border-box;
+}
+
+.input_panel input, .input_panel button, .input_panel select {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    margin: 5px;
+    padding: 5px;
+}
+
+.input_panel input {
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.input_panel button {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+
+.input_panel button:hover {
+    background-color: #7fdebb;
+    border-color: #7fdebb;
+}
+
+.input_panel input:focus {
+    outline: none;
+    border-color: #7fdebb;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+#name_field, #surname_field {
+    width: 35%;
+}
+
+#phone_field {
+    width: 10%
+}
+
+/* Modal */
+
+.modal-bg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.bg-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Pop Up */
+
+.popup_container {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    animation-name: example;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+}
+
+@keyframes example {
+    0% {
+        visibility: visible;
+        top: -100px;
+    }
+    20% {
+        top: 0;
+    }
+    80% {
+        top: 0;
+    }
+    99% {
+        visibility: visible;
+    }
+    100% {
+        top: -100px;
+        visibility: hidden;
+    }
+
+}

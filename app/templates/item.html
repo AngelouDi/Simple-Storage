@@ -1,0 +1,9 @@
+{% extends 'main_layout.html' %}
+{% block topnav %}
+<span>{{itemname}}</span>
+{% endblock %}
+
+{% block extra_tools %}
+<button class="panel" id="rename-item-btn" title="Rename Item"><img src="{{ url_for('static', filename='images/edit.svg') }}"></button>
+<button class="panel" id="delete-item-btn" title="Delete Item"><img src="{{ url_for('static', filename='images/trash.svg') }}"></button>
+{% endblock %}
